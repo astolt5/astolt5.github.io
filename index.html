@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Portfolio Website</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<style>
+	@font-face {
+		font-family: TheBoysFont;
+		src: url('assets/fonts/Charlie_Dont_Surf.ttf');
+	}
+
+	.modal {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(77, 77, 77, .7);
+		transition: all .4s;
+		z-index: 100;
+	}
+
+	.modal:target {
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.modal__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border-radius: 4px;
+		position: relative;
+		max-width: 90%;
+		background: #393d51;
+		padding: 1em 2em;
+	}
+
+	.modal__footer {
+		text-align: right;
+	}
+
+	.modal__footer a {
+		color: #585858;
+	}
+
+	.modal__footer i {
+		color: #d02d2c;
+	}
+
+	.modal__close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: #f0eaea;
+		text-decoration: none;
+	}
+</style>
+
+<body class="is-preload">
+
+	<div id="demo-modal" class="modal">
+		<div class="modal__content">
+			<h1 id="modal-title">Video Title</h1>
+			<video id="modal-video-src" width="600" height="400" controls loop autoplay>
+				<!-- <source src="./images/Video/armor render.mp4" type="video/mp4"> -->
+				Your browser does not support the video tag.
+			</video>
+			<a href="#" class="modal__close">&times;</a>
+		</div>
+	</div>
+
+	<!-- Header -->
+	<div id="header">
+
+		<div class="top">
+
+			<!-- Logo -->
+			<div id="logo">
+				<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+				<h1 id="title">Durvankur Dama</h1>
+				<p>3D Modeller</p>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+					<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Recent Artworks</span></a>
+					</li>
+					<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+					<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a>
+					</li>
+				</ul>
+			</nav>
+
+		</div>
+
+		<div class="bottom">
+
+			<!-- Social Icons -->
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/durvankur-dama-0251b01ba/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+				<li><a href="https://github.com/astolt5" class="icon brands fa-github"><span class="label">Github</span></a></li>
+				<!-- <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li> -->
+				<li><a href="https://www.artstation.com/astolt2" class="icon brands fa-artstation"><span class="label">Artstation</span></a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<!-- Main -->
+	<div id="main">
+
+		<!-- Intro -->
+		<section id="top" class="one dark cover">
+			<div class="container">
+
+				<header>
+					<h2 class="alt">Hi! I am <strong>Durvankur Dama.</strong><br>
+					Welcome to my Portfolio...
+					</h2>
+				</header>
+
+				<!-- <footer>
+					<a href="#portfolio" class="button scrolly">Portfolio</a>
+				</footer> -->
+
+			</div>
+		</section>
+
+		<!-- Portfolio -->
+		<section id="portfolio" class="two">
+			<div class="container">
+
+				<header>
+					<h2>Recent Artworks</h2>
+				</header>
+
+				<p></p>
+
+				<div class="row">
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="#demo-modal" class="image fit" onclick="setVideoDetails('Jinx Grenade', 'images/Video/Jinxgernade_1.mp4')"><img src="images\arcane.jpg" alt="" /></a>
+							<header>
+								<h3>Jinx's Gernade</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Substance 3D Painter</span>
+							<span class="tag-card">Adobe Premeire Pro</span>
+						</article>
+
+						<article class="item">
+							<a href="#demo-modal" class="image fit" onclick="setVideoDetails('', 'images/Maya.png')"><img src="images\Maya.png" alt="" /></a>
+							<header>
+								<h3>Maya</h3>
+							</header>
+							<span class="tag-card">Blender</span>
+							<span class="tag-card">Zbrush</span>
+						</article>
+
+						<article class="item">
+							<a href="" class="image fit"><img src="images\irrena.jpg" alt="" /></a>
+							<header>
+								<h3>Irrena</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Xgen</span>
+							<span class="tag-card">Unreal Engine</span>
+						</article>
+					</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="" class="image fit"><img src="images\flamethrowerside.png" alt="" /></a>
+							<header>
+								<h3>Flamethrower</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Substance 3D Painter</span>
+						</article>
+						<article class="item">
+							<a href="" class="image fit"><img src="images\final composition.png" alt="" /></a>
+							<header>
+								<h3>Fellena</h3>
+							</header>
+							<span class="tag-card">Adobe Photoshop</span>
+							<span class="tag-card">Substance 3D Painter</span>
+							<span class="tag-card">ZBrush</span>
+							<span class="tag-card">ZWarp</span>
+						</article>
+					</div>
+					<div class="col-4 col-12-mobile">
+						<article class="item">
+							<a href="" class="image fit"><img src="images\side front view.jpg" alt="" /></a>
+							<header>
+								<h3>Room</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Substance 3D Painter</span>
+						</article>
+
+						<article class="item">
+							<a href="" class="image fit"><img src="images\Police Uniform.png" alt="" /></a>
+							<header>
+								<h3>Police Uniform</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Marvelous Designer</span>
+							<span class="tag-card">Marmoset Toolbag</span>
+						</article>
+
+						<article class="item">
+							<a href="" class="image fit"><img src="images\Cell.png" alt="" /></a>
+							<header>
+								<h3>Cell</h3>
+							</header>
+							<span class="tag-card">Maya</span>
+							<span class="tag-card">Substance 3D Painter</span>
+						</article>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- About Me -->
+		<section id="about" class="three">
+			<div class="container">
+				<header>
+					<h2>About Me</h2>
+				</header>
+				<!-- <a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a> -->
+				<p> I am a 3D Prop Artist and Character Artist with experience working on various software such as Maya, Blender, Zbrush, Substance Painter, Photoshop, Unreal Engine, and Marvelous Designer. <br>
+					I am passionate about my craft and continuously strive to improve my skills. <br>
+					In my free time, I love to watch crime mystery series and movies, and I am always on the lookout for new hobbies to pick up.<br>
+					Also I enjoy playing a variety of genres including Multiplayer FPS and Strategy games along with <span style="font-family: TheBoysFont; color: rgb(175, 50, 50);">THE BOYS.</span>
+					<br>
+					I believe that by constantly learning new things, I can hone my skills and become a better artist.
+				</p>
+			</div>
+		</section>
+
+		<!-- Contact -->
+		<section id="contact" class="four">
+			<div class="container">
+
+				<header>
+					<h2>Contact</h2>
+				</header>
+
+				<p>Please feel free to provide me with feedbacks or contact me just to say 'Hi' :)</p>
+
+				<span id="response-text-holder" hidden><mark id="response-text">Response Message Here</mark></span>
+				<form action="https://api.web3forms.com/submit" method="POST" id="form">
+					<input type="hidden" name="access_key" value="e237874e-cc08-4990-a711-177dd29045a7" />
+					<div class="row">
+						<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
+						<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" />
+						</div>
+						<div class="col-12">
+							<textarea name="message" placeholder="Message"></textarea>
+						</div>
+						<div class="col-12">
+							<input type="submit" value="Send Message" />
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer">
+
+		<!-- Copyright -->
+		<ul class="copyright">
+			<li>&copy; Portfolio 2023</li>
+			<li>Get my <a href="http://html5up.net">Resume</a> here</li>
+		</ul>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script>
+
+		function setVideoDetails(title, source) {
+			const videoTitle = document.getElementById("modal-title");
+			const videoSrc = document.getElementById("modal-video-src");
+
+			videoTitle.innerText = title;
+			videoSrc.src = source;
+			videoSrc.play();
+		}
+
+
+		const form = document.getElementById("form");
+		const progressBar = document.getElementById("progress-bar");
+		const responeText = document.getElementById("response-text");
+		const responeTextHolder = document.getElementById("response-text-holder");
+
+		form.addEventListener("submit", function (e) {
+			const formData = new FormData(form);
+			e.preventDefault();
+			var object = {};
+			formData.forEach((value, key) => {
+				object[key] = value;
+			});
+
+			var json = JSON.stringify(object);
+
+			form.reset();
+
+			fetch("https://api.web3forms.com/submit", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json"
+				},
+				body: json
+			}).then(async (response) => {
+				let json = await response.json();
+				responeTextHolder.hidden = false;
+				if (response.status == 200) {
+					responeText.innerHTML = json.message;
+				} else {
+					console.log(response);
+					responeText.innerHTML = json.message;
+				}
+			}).catch((error) => {
+				console.log(error);
+				responeText.innerHTML = "Something went wrong!";
+			}).then(function () {
+				form.reset();
+				setTimeout(() => {
+					responeTextHolder.hidden = true;
+				}, 5000);
+			});
+		});
+	</script>
+
+</body>
+
+</html>
